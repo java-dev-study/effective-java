@@ -24,3 +24,17 @@
 
 오늘날 자바빈 스펙 중에서도 getter와 setter가 주로 쓰는 이유?
 > JPA나 스프링과 같은 여러 프레임워크에서 리플렉션을 통해 특정 객체의 값을 조회하거나 설정하기 때문.
+
+### IllegalArgumentException
+
+- 잘못된 인자를 넘겨 받았을 때 사용할 수 있는 기본 런타임 예외
+
+- checked exception과 unchecked exception의 차이
+    - checked exception은 catch 블록으로 예외를 처리하거나 예외를 다시 thorw 해야함. 컴파일 시점 처리
+    - unchecked exception은 런타임시 예외 발생
+
+- 간혹 메서드 선언부에 unchecked exception을 선언하는 이유?
+    - 클라이언트에 어떠한 exception이 발생할 수 있다는 정보를 제공하기 위해.
+
+- checked exception을 왜 사용할까?
+    - exception 발생 시, 클라이언트 코드에서 exception에 대한 예외 처리를 강요하기 위해.
