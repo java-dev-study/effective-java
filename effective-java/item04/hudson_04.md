@@ -81,7 +81,7 @@ Utility성 클래스들은 정적 메서드만을 가지고 있다.
 > Error의 경우에는 런타임에서 실행 시 발생되며 전부 예측 불가능한 Unchecked Error에 속한다
 > 
 > Exception과 다르게 에러가 발생할 경우 코드를 고치지 않고서는 해결이 불가능하며
-> 예제로는 StackOverflowError나 OutOfMemoryError가 있다
+> 예로는 StackOverflowError나 OutOfMemoryError가 있다
 
 ### 생성자에 주석으로 인스턴스화 불가한 이유를 설명하는 것이 좋다.
         
