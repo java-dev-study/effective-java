@@ -41,5 +41,8 @@ public class Store {
 > - Supplier<T> is perfectly suited for representing factories
 > - methods that take this interface should typically constrain the factory’s type parameter with a bounded wildcard type (Item 31)
 > - the client should be able to pass in a factory that requires any subtype of a specified type
+
+	example ( 클라이언트가 제공한 팩터리가 생성한 타일(Tile)들로 구성된 모자이크(Mosaic)를 만드는 메서드 / 출처: https://hirlawldo.tistory.com/55 )
 	
 	
+
