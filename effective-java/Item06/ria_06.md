@@ -12,21 +12,21 @@ String strObject3 = new String("TEST");
 
 문자열 s1, s2, s3는 모두 "TEST"라는 문자열을 갖지만 각각 참조하는 주소가 다르기 때문에 메모리 낭비가 발생한다.
 
-![image-20220510081120835](C:\Users\UserK\AppData\Roaming\Typora\typora-user-images\image-20220510081120835.png)
+![image](https://user-images.githubusercontent.com/67992684/167654567-0fa4b398-f795-4353-b1ef-fb3beeafaea2.png)
 
 new 연산자를 통해 문자열 객체를 생성하는 경우 메모리의 Heap 영역에 할당되어 총 3개의 인스턴스가 생긴 것을 알 수 있다.
 
 
 
 ```java
-String strObject1 = "TEST";
-String strObject2 = "TEST";
-String strObject3 = "Java"
+String strLiteral1 = "TEST";
+String strLiteral2 = "TEST";
+String strLiteral3 = "Java"
 ```
 
 위 코드는 하나의 인스턴스를 사용한다. 나아가 이 방식을 사용한다면 같은 JVM안에서 "TEST" 문자열 리터럴을 사용하는 모든 코드가 같은 객체를 재사용함을 보장한다.
 
-![image-20220510081309143](C:\Users\UserK\AppData\Roaming\Typora\typora-user-images\image-20220510081309143.png)
+![image](https://user-images.githubusercontent.com/67992684/167654702-aa5a1703-82e6-4e0a-b71f-d51c33f02244.png)
 
 반면, 리터럴을 이용한 경우 String Pool 영역에 할당되어 strLiter1과 strLiteral2는 같은 문자열을 참조하고 있는 것을 알 수 있다.
 
