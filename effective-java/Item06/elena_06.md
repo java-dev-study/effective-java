@@ -5,11 +5,11 @@
 String s = new String("bikini");
 ```
 > 실행될 때마다 String 인스턴스를 새로 만듦
-\n
+
 ```java
 String s = "bikini";
 ```
-> 하나의 String 인스턴스를 사용
+> 하나의 String 인스턴스를 사용\
 > 문자열 리터럴을 사용하는 모든 코드가 같은 객체를 재사용함이 보장됨
 ---
 2.
@@ -21,8 +21,9 @@ static boolean isRomanNumeral(String s) {
           + "(X[CL]|L?X{0, 3})(I[XV]|V?I{0, 3})$");
 }
 ```
-> matches : 성능이 중요한 상황에서 반복해 사용하기엔 적합하지 않음
+> matches : 성능이 중요한 상황에서 반복해 사용하기엔 적합하지 않음\
 > 한 번 쓰고 버려져서 곧바로 가비지 컬렉션 대상이 되기 때문
+
 ↓
 ```java
 public class RomanNumerals {
@@ -35,7 +36,7 @@ public class RomanNumerals {
   }
 }
 ```
-> 정적 초기화 과정에서 직접 생성해 캐싱
+> 정적 초기화 과정에서 직접 생성해 캐싱\
 > 추후 isRomanNumeral 메서드가 호출될 때마다 이 인스턴스를 재사용
 ---
 3.
@@ -52,7 +53,7 @@ private static long sum() {
   return sum;
 }
 ```
-> 박싱된 기본 타입보다는 기본 타입을 사용
+> 박싱된 기본 타입보다는 기본 타입을 사용\
 > 의도치 않은 오토박싱이 숨어들지 않도록 주의
 ---
 4.
