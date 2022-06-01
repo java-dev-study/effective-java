@@ -62,3 +62,47 @@ public int hashCode() {
 - 지연 초기화 기법을 사용할 때 스레드 안전성을 신경써야 한다.
 - 성능 때문에 핵심 필드를 해시코드 계산할 때 빼면 안된다.
 - 해시코드 계산 규칙을 API에 노출하지 않는 것이 좋다.
+
+##### Object hash 관련 메서드
+
+- Objects.hash()
+
+  키를 hash로 바꾸어주는 역할로 hash()에 의해 반환된 데이터 고유의 숫자 값을 hashCode라고 한다.
+
+  ```java
+  @Override
+      public int hashCode() {
+          return Objects.hash(n1, n2, n3);
+      }
+  ```
+
+  입력받은 파라미터를 Arrays.hashCode 메서드를 이용해서 hashCode로 바꿔준다.
+
+  ```java
+   public static int hash(Object... values) {
+          return Arrays.hashCode(values);
+      }
+  ```
+
+  ```java
+  public static int hashCode(Object[] a) {
+      if (a == null) {
+          return 0;
+      } else {
+          int result = 1;
+          Object[] var2 = a;
+          int var3 = a.length;
+  
+          for(int var4 = 0; var4 < var3; ++var4) {
+              Object element = var2[var4];
+              result = 31 * result + (element == null ? 0 : element.hashCode());
+          }
+  
+          return result;
+      }
+  }
+  ```
+
+- Objects.hashCode()
+
+  객체의 hashCode값을 반환시켜주는 함수이다. hashCode는 Heap에 있는 객체의 메모리 주소를 바탕으로 생성되며, 반환된 hashCode는 Object를 식별할 수 있는 하나의 Integer값을 의미한다.
