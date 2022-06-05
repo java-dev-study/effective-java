@@ -123,8 +123,8 @@ public class HashTable implements Cloneable {
   }
 }
 ```
-- 원본과 같은 연결 리스트를 참조하여 원본과 복제본 모두 예기치 않게 동작할 가능성이 생김
-- ==> 이를 해결하기 위해 각 버킷을 구성하는 연결 리스트를 복사해야 함
+- 원본과 같은 연결 리스트를 참조하여 원본과 복제본 모두 예기치 않게 동작할 가능성이 생김\
+==> 이를 해결하기 위해 각 버킷을 구성하는 연결 리스트를 복사해야 함
 ```java
 public class HashTable implements Cloneable {
   private Entry[] buckets = ...;
@@ -164,8 +164,8 @@ public class HashTable implements Cloneable {
 }
 ```
 - Entry의 deepCopy 메서드는 자신이 가리키는 연결 리스트 전체를 복사하기 위해 자신을 재귀적으로 호출
-- 재귀 호출 때문에 리스트의 원소 수만큼 스택 프레임을 소비 → 리스트가 길면 스택 오버플로를 일으킬 위험이 있음
-- ==> deepCopy를 재귀 호출 대신 반복자를 써서 순회하는 방향으로 수정
+- 재귀 호출 때문에 리스트의 원소 수만큼 스택 프레임을 소비 → 리스트가 길면 스택 오버플로를 일으킬 위험이 있음\
+==> deepCopy를 재귀 호출 대신 반복자를 써서 순회하는 방향으로 수정
 ```java
 Entry deepCopy() {
   Entry result = new Entry(key, value, next);
@@ -178,12 +178,13 @@ Entry deepCopy() {
 ---
 **5. clone 구현**
 - Cloneable을 이미 구현한 클래스를 확장한다면 어쩔 수 없이 clone을 잘 작동하도록 구현해야 함
-- 그렇지 않은 상황에서는 **복사 생성자와 복사 팩터리라는 더 나은 객체 복사 방식을 제공**할 수 있음
-+ `복사 생성자 : 단순히 자신과 같은 클래스의 인스턴스를 인수로 받는 생성자`
+- 그렇지 않은 상황에서는 **복사 생성자와 복사 팩터리라는 더 나은 객체 복사 방식을 제공**할 수 있음\
+
+`복사 생성자 : 단순히 자신과 같은 클래스의 인스턴스를 인수로 받는 생성자`
 ```java
 public Yum(Yum yum) { ... };
 ```
-+ `복사 팩터리 : 복사 생성자를 모방한 정적 팩터리`
+`복사 팩터리 : 복사 생성자를 모방한 정적 팩터리`
 ```java
 public static Yum newInstance(Yum yum) { ... };
 ```
